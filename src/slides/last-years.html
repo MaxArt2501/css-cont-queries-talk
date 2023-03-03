@@ -1,0 +1,58 @@
+<p-slide class="justify-start">
+  <h2 class="our-header text-invert">Before&hellip;</h2>
+  <img src="img/freezing.webp" alt="Picture of The Shining's Jack Torrance freezing in the snow at the end of the film" class="full-media">
+  <p-notes>
+    It was not 4 years ago that I was complaining about how things were moving slowly for CSS. Grids were the last new things
+    and it took years to be refined and specified, and even if browsers were rather quick to implement it
+  </p-notes>
+</p-slide>
+<p-slide class="justify-start" style="--slide-bg: #555">
+  <h2 class="our-header text-invert">Houdini</h2>
+  <img src="img/harry-houdini.jpg" alt="Harry Houdini trying to get free of chains" class="full-media">
+  <p-notes>
+    So that I talked about CSS Houdini and how it supposed to let us break free of that situation. Now, the project did some
+    things that promised, but not every one of its APIs has been fully specified - let alone implemented in browsers, not
+    even Chrome. And now the initial push has basically vanished.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h1 class="center">Now&hellip;</h1>
+</p-slide>
+<p-slide>
+  <h1 class="center">Logical properties</h1>
+  <pre class="language-css big self-center"><code>.box {
+    padding-inline-start: 1em;
+    margin-block: 2em;
+    text-align: start;
+    inset: 0;
+}</code></pre>
+  </p-slide>
+<p-slide>
+  <h1 class="center">Color Functions</h1>
+  <pre class="language-css big self-center"><code>.rainbow {
+  color: lch(80% 100 50 / 0.5);
+  color: color(display-p3 0.9 0 0.5);
+  color: color-mix(in rgb, salmon 30%, blue);
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h1 class="center">Cascade Layers</h1>
+  <p-fragment class="self-center center">
+    <img src="img/confused.gif" alt="A clip of a visibly confused person" style="height: 8em">
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center"><code>:has()</code></h1>
+  <pre class="language-css big self-center"><code>form:has(:invalid) { border: red; }
+
+article:has(> header) { margin-top: 1em; }
+
+h1:has(+ p) { margin-bottom: .5em; }</code></pre>
+</p-slide>
+<p-slide class="justify-start">
+  <h1 class="meme-text center uppercase">IE is dead</h1>
+  <img src="img/crowd-cheering.gif" alt="Clip of a crowd cheering" class="full-media">
+</p-slide>
+<p-slide>
+  <h1 class="center">And even more&hellip;</h1>
+</p-slide>

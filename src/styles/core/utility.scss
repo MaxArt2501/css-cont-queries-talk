@@ -25,6 +25,9 @@
 .bold {
   font-weight: bold;
 }
+.text-invert {
+  color: white
+}
 
 .inline-logo {
   height: 1.5em;
@@ -56,6 +59,7 @@
 
 .full-media {
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
