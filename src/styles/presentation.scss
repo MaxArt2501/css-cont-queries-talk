@@ -42,7 +42,7 @@
   font-family: Raleway, system-ui, sans-serif;
   --slide-bg: white;
   --sliding-duration: 0ms;
-  --fragment-duration: 100ms;
+  --fragment-duration: 300ms;
   --brand-color: #f60;
   --brand-color-gfy: #822a7c;
   --sketchy-arrow-width: 0.1em;
@@ -234,5 +234,25 @@ p-fragment.landing {
   }
   to {
     --sketchy-arrow-random-seed: 40;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Old Newspaper Types', serif;
+}
+
+.meme-text {
+  font-family: 'Old Newspaper Types', serif;
+  -webkit-text-stroke-width: 0.02em;
+  font-weight: normal;
+}
+.full-media {
+  filter: contrast(0.8) sepia(1) hue-rotate(-15deg);
+}
+
+code, pre {
+  &, &[class*="language-"] {
+    font-family: 'Gabriele Bad', monospace;
+    line-height: 1.33333;
   }
 }

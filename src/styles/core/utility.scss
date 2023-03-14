@@ -97,6 +97,31 @@
   }
 }
 
+$motion-entrance-timing-fn: cubic-bezier(.3,1.21,.79,.91);
+
+@keyframes from-top {
+  0% { transform: translateY(-2em); }
+  100% { transform: translateY(0em); }
+}
+@keyframes from-right {
+  0% { transform: translateX(4em); }
+  100% { transform: translateX(0em); }
+}
+@keyframes from-bottom {
+  0% { transform: translateY(2em); }
+  100% { transform: translateY(0em); }
+}
+@keyframes from-left {
+  0% { transform: translateX(-4em); }
+  100% { transform: translateX(0em); }
+}
+@each $dir in top right bottom left {
+  p-fragment.from-#{$dir}[aria-hidden='false'],
+  p-slide[aria-hidden='false'] :not(p-fragment).from-#{$dir} {
+    animation: from-#{$dir} var(--fragment-duration, 300ms) $motion-entrance-timing-fn 1 forwards;
+  }
+}
+
 .overlay-banner {
   position: absolute;
   top: 50%;
@@ -109,4 +134,25 @@
   text-align: center;
   line-height: 1.5;
   z-index: 10;
+}
+
+.sepia {
+  filter: contrast(0.8) sepia(1) hue-rotate(-15deg);
+}
+
+$fade-border-image-x: linear-gradient(to right, transparent, black var(--fade-border-width, 1em), black calc(100% - var(--fade-border-width, 1em)), transparent);
+$fade-border-image-y: linear-gradient(to bottom, transparent, black var(--fade-border-width, 1em), black calc(100% - var(--fade-border-width, 1em)), transparent);
+.fade-borders-x {
+  -webkit-mask-image: $fade-border-image-x;
+  mask-image: $fade-border-image-x;
+}
+.fade-borders-y {
+  -webkit-mask-image: $fade-border-image-y;
+  mask-image: $fade-border-image-y;
+}
+.fade-borders {
+  -webkit-mask-image: $fade-border-image-x, $fade-border-image-y;
+  mask-image: $fade-border-image-x, $fade-border-image-y;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
