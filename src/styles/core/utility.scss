@@ -21,6 +21,12 @@
 .self-center {
   align-self: center;
 }
+.self-start {
+  align-self: start;
+}
+.self-end {
+  align-self: end;
+}
 
 .bold {
   font-weight: bold;
@@ -116,8 +122,8 @@ $motion-entrance-timing-fn: cubic-bezier(.3,1.21,.79,.91);
   100% { transform: translateX(0em); }
 }
 @each $dir in top right bottom left {
-  p-fragment.from-#{$dir}[aria-hidden='false'],
-  p-slide[aria-hidden='false'] :not(p-fragment).from-#{$dir} {
+  p-fragment[aria-hidden='false'] .from-#{$dir},
+  p-slide[aria-hidden='false'] .from-#{$dir}:not(p-fragment > .from-#{$dir}) {
     animation: from-#{$dir} var(--fragment-duration, 300ms) $motion-entrance-timing-fn 1 forwards;
   }
 }
