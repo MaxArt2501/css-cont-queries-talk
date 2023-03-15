@@ -239,6 +239,7 @@ p-fragment.landing {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Old Newspaper Types', serif;
+  font-weight: normal;
 }
 
 .meme-text {
@@ -247,12 +248,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 .full-media {
-  filter: contrast(0.8) sepia(1) hue-rotate(-15deg);
+  filter: contrast(0.65) sepia(1) hue-rotate(-15deg) saturate(0.7) brightness(0.92);
 }
 
 code, pre {
   &, &[class*="language-"] {
     font-family: 'Gabriele Bad', monospace;
     line-height: 1.33333;
+  }
+}
+
+.old-photo {
+  border-width: 1em;
+  border-style: solid;
+  border-image-source: url(../img/old-photo-borders.webp);
+  border-image-slice: 80 80 90;
+  border-image-repeat: stretch;
+}
+
+.full-media {
+  &.full-media-x {
+    height: auto;
+    top: auto;
+  }
+  &.full-media-y {
+    width: auto;
+    left: auto;
   }
 }

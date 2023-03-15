@@ -137,7 +137,7 @@ $motion-entrance-timing-fn: cubic-bezier(.3,1.21,.79,.91);
 }
 
 .sepia {
-  filter: contrast(0.8) sepia(1) hue-rotate(-15deg);
+  filter: contrast(0.65) sepia(1) hue-rotate(-15deg) saturate(0.7) brightness(0.92);
 }
 
 $fade-border-image-x: linear-gradient(to right, transparent, black var(--fade-border-width, 1em), black calc(100% - var(--fade-border-width, 1em)), transparent);
