@@ -25,5 +25,53 @@
 </p-slide>
 <p-slide>
   <h2 class="center">What about <em>components</em>?</h2>
-  <img src="img/confused.gif" alt="Clip of a confused Stan Laurel" class="sepia fade-borders" style="height: 8em; --fade-border-width: .25em">
+  <img src="img/confused.gif" alt="Clip of a confused Stan Laurel" class="fade-borders" style="height: 8em; --fade-border-width: .25em">
+</p-slide>
+<p-slide>
+  <img src="img/old-newspaper.png" alt="A picture of a fake old newspaper" class="full-media">
+  <p-fragment>
+    <div class="frame" style="inset: 15.8% 31.5% 52.2% 46%; color: blue"></div>
+    <div class="frame" style="inset: 15.8% 53.7% 37.2% 38.8%; color: blue"></div>
+  </p-fragment>
+  <p-fragment>
+    <div class="frame" style="inset: 78.5% 31.3% 5.5% 53.7%; color: red"></div>
+    <div class="frame" style="inset: 63% 53.6% 5.4% 31.4%; color: red"></div>
+  </p-fragment>
+  <p-fragment class="two-columns center">
+    <div style="padding-inline-end: 22%;">Different sizes&hellip;</div>
+    <div style="padding-inline-start: 22%;">&hellip; different layouts</div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="center">How we used to do it</h3>
+  <p-fragment>
+    <code class="from-left" style="position: absolute;top: 28%;left: 20%">flex-wrap: wrap</code>
+    <img src="img/penny-farthing-1.png" alt="Picture of a man on a penny farthing" class="from-right" style="height: 6em; margin-left: 58%;">
+  </p-fragment>
+  <p-fragment>
+    <img src="img/penny-farthing-2.png" alt="Picture of a man on a penny farthing" class="from-right" style="height: 6em;margin: -1em 0 0 5%;">
+    <code class="from-right" style="position: absolute;top: 65%;left: 29%;text-indent: -1.3em;padding-left: 1.5em;width: 57%;">grid-template-columns: repeat(auto-fi*, minmax(10rem, 1fr))</code>
+  </p-fragment>
+</p-slide>
+<p-slide class="giko-slide">
+  <img src="img/css-day-2019.png" alt="CSSDay 2019" class="from-top sepia">
+  <img src="img/giko.jpg" alt="Photo of Giacomo Zinetti" class="from-left">
+  <h2 class="center from-right"><a href="https://www.youtube.com/watch?v=afrqNUc7zz0" target="_blank" rel="noopener">La fine delle media query</a></h2>
+</p-slide>
+<p-slide>
+  <h3 class="our-header from-top">Element queries</h3>
+  <div class="self-center">
+    <pre class="language-html from-right"><code>&lt;div class="widget-name">
+  &lt;h2>Element responsiveness FTW!&lt;/h2>
+&lt;/div></code></pre>
+    <pre class="language-css from-bottom"><code>.widget-name h2 {
+  font-size: 12px;
+}
+.widget-name[min-width~="400px"] h2 {
+  font-size: 18px;
+}</code></pre>
+  </div>
+  <p-fragment class="landing sepia" style="top: 10%; right: 15%">
+    <img src="img/js.png" alt="Logo of JavaScript" style="height: 4em; transform: rotate(15deg); filter: drop-shadow(.05em .05em .1em rgba(0, 0, 0, .35))">
+  </p-fragment>
 </p-slide>
