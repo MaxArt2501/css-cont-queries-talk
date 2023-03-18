@@ -75,3 +75,37 @@
     <img src="img/js.png" alt="Logo of JavaScript" style="height: 4em; transform: rotate(15deg); filter: drop-shadow(.05em .05em .1em rgba(0, 0, 0, .35))">
   </p-fragment>
 </p-slide>
+<p-slide class="center">
+  <h1>&ldquo;Can&apos;t we <em>just</em>&hellip;?&rdquo;</h1>
+  <p-fragment class="two-columns">
+    <pre class="language-css"><code>.painting {
+  background: url(monalisa.jpg);
+
+  @element (min-width: 8rem) {
+    background: url(spring.jpg);
+  }
+}</code></pre>
+    <div class="old-frame"></div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="our-header">The Problem</h1>
+  <div class="two-columns align-center">
+    <p-fragment>
+      <pre class="language-css from-left"><code>.box-o-stuff {
+  width: 1000px;
+
+  @element (min-width: 800px) {
+    width: 500px;
+  }
+}</code></pre>
+    </p-fragment>
+    <p-fragment>
+      <pre class="language-css from-right"><code>.box-o-stuff {
+  @element (max-width: 800px) {
+    div { width: 1000px; }
+  }
+}</code></pre>
+    </p-fragment>
+  </div>
+</p-slide>

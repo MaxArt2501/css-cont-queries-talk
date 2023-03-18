@@ -321,3 +321,38 @@ pre[class*='language-'] {
     color: #785f3c;
   }
 }
+
+
+.old-frame {
+  border-width: .5em;
+  border-style: solid;
+  border-image-source: url(../img/frame.webp);
+  border-image-slice: 65;
+  height: 6em;
+  width: 8.78em;
+  background-image: url(../img/spring.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: frame-stretch 3s infinite alternate;
+
+  &#{&} {
+    margin: auto;
+  }
+}
+
+@keyframes frame-stretch {
+  0% {
+    width: 8.78em;
+    background-image: url(../img/spring.jpg);
+  }
+  59% {
+    background-image: url(../img/spring.jpg);
+  }
+  60% {
+    background-image: url(../img/monalisa.jpg);
+  }
+  100% {
+    width: 4.39em;
+    background-image: url(../img/monalisa.jpg);
+  }
+}
