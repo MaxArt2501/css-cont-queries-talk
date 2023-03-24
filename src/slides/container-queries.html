@@ -9,14 +9,142 @@
   <img src="img/handshake.webp" alt="A handshake" class="sepia from-bottom" style="height: 8em; margin-top: 1em;">
 </p-slide>
 <p-slide>
-  <h3 class="our-header">Containing things&hellip;</h3>
+  <h2 class="center">Containing things&hellip;</h2>
   <div class="two-columns self-center">
-    <img src="img/brace.png" alt="Opening curly brace" style="height: 5.4em; width: auto;" class="sepia">
-    <ul>
+    <code class="self-center from-left">contain:</code>
+    <ul style="background: url(img/brace.svg) 0 0/contain no-repeat; padding-inline-start: 1.5em;" class="from-right">
       <li><p-fragment><code>layout</code></p-fragment></li>
       <li><p-fragment><code>size</code></p-fragment></li>
       <li><p-fragment><code>paint</code></p-fragment></li>
       <li><p-fragment><code>style</code></p-fragment></li>
     </ul>
   </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Layout containment</h2>
+  <p class="center">
+    The internal layout is <em>isolated</em>: it can't affect the external layout, nor external factors can affect the internal layout.
+  </p>
+  <p class="center">
+    It's like a new &ldquo;viewport&rdquo;.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+      Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+    </article>
+    <article>
+      <h4>Here&rsquo;s no contain</h4>
+      <p>
+        SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita? Laborum ducimus fugit excepturi itaque eum sapiente possimus vero saepe dicta quo. Quia omnis odio placeat quis!
+        Fugiat dolor ad laudantium aliquam beatae?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+      Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+    </article>
+    <article style="contain: layout;">
+      <h4>Lo, here&rsquo;s contain: layout</h4>
+      <p>
+        SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita? Laborum ducimus fugit excepturi itaque eum sapiente possimus vero saepe dicta quo. Quia omnis odio placeat quis!
+        Fugiat dolor ad laudantium aliquam beatae?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Size containment</h2>
+  <p class="center">
+    The element's size is <em>not</em> determined by its descendants.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+      <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia" style="contain: size; margin-top: .55em; height: 4em;">
+    <article>
+      <h4>Hark, contain: size!</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+      <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Paint containment</h2>
+  <p class="center">
+    Nothing is rendered outside the element's boundaries.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Absolutely positioned img</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat" style="position: absolute;">
+      <p style="margin-inline-start: 10em; margin-left: 10em;">LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article style="contain: paint;">
+      <h4>And lo, contain: paint</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat" style="position: absolute;">
+      <p style="margin-inline-start: 10em; margin-left: 10em;">LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Style containment</h2>
+  <p class="center">
+    <em>Not</em> style encapsulation. It's just for counters.
+  </p>
+  <p-fragment class="self-center">
+    <pre class="language-css big"><code>p::before {
+  content: counter(num);
+}</code></pre>
+  </p-fragment>
 </p-slide>
