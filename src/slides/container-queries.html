@@ -1,0 +1,65 @@
+<p-slide>
+  <div class="two-columns align-center">
+    <h2 class="our-header from-left">Container Queries, take 2</h2>
+    <img src="img/alfred.jpg" alt="Alfred Hitchock holding a clapperboard for his film 'Psycho'" class="old-photo sepia from-right">
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">Declaring a <em>container</em></h2>
+  <pre class="language-css big self-center"><code>.container {
+  container-type: inline-size;
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <pre class="language-css"><code>.container {
+  container-type: inline-size;
+}
+.frame {
+  background: url(monalisa.jpg);
+}
+
+@container (min-width: 8rem) {
+  .frame {
+    background: url(spring.jpg);
+  }
+}</code></pre>
+    <div>
+      <pre class="language-html"><code>&lt;div class="container">
+  &lt;div class="frame">&lt;/div>
+&lt;/div></code></pre>
+      <p-fragment class="center">
+        <div class="old-frame"></div>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center" style="margin-bottom: .25em;"><em>Nested</em> containers?</h2>
+  <p-fragment class="self-center">
+    <pre class="big language-html from-bottom"><code>&lt;main class="container">
+  &lt;header>...&lt;/header>
+  &lt;aside>...&lt;/aside>
+  &lt;section>
+    &lt;article class="container">
+      &lt;p>...&lt;/p>
+    &lt;/article>
+  &lt;/section>
+&lt;/main></code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <div class="self-center">
+    <pre class="big language-css from-top"><code>main.container {
+  container-name: main;</code>
+  <p-fragment><code>/* Or together: */
+  container: main / inline-size;</code></p-fragment>
+<code>}</code></pre>
+    <p-fragment>
+      <pre class="big language-css from-bottom"><code>p { font-size: 150%; }
+@container main (min-width: 40rem) {
+  p { font-size: 200%; }
+}</code></pre>
+    </p-fragment>
+  </div>
+</p-slide>

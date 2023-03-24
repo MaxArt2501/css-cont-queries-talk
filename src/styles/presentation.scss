@@ -280,6 +280,10 @@ pre[class*='language-'] {
   border-image-slice: 20 20 23 fill;
   background: none;
   filter: sepia(.15);
+
+  > p-fragment > code {
+    background: none;
+  }
 }
 
 
@@ -394,5 +398,4 @@ pre[class*='language-'] {
     float: left;
     float: inline-start;
   }
-
 }
