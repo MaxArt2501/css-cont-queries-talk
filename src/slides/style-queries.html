@@ -1,0 +1,159 @@
+<p-slide class="center">
+  <h1>But wait, there&rsquo;s more!</h1>
+</p-slide>
+<p-slide>
+  <h4 class="center">With Media Queries, we can query <em>not just sizes</em></h4>
+  <p-fragment class="self-center from-bottom">
+    <pre class="language-css"><code>@media (pointer: coarse) {
+  ...
+}
+@media (prefers-reduced-motion: reduce) {
+  ...
+}</code></pre>
+  </p-fragment>
+  <p-fragment class="from-bottom">
+    <h3 class="center">What about Container Queries?</h3>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">Actually&hellip;</h1>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    According to <a href="https://www.w3.org/TR/css-contain-3/#style-container" target="_blank" rel="noopener">the spec</a>,
+    we <em>should</em> be able to do this:</h2>
+  <p-fragment class="from-bottom self-center">
+    <pre class="language-css big"><code>@container style(background: white) {
+  header { color: #222; }
+}</code></pre>
+  </p-fragment>
+  <p-fragment>
+    <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
+      style="top: 19%; width: 45em; left: -32%; height: 12em;">
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <img src="img/surprised.webp" alt="Vintage picture of a surprised child" class="full-media full-media-y sepia old-photo">
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <div>
+      <h2 class="our-header from-left align-center">&hellip; but we can&rsquo;t.</h2>
+      <p-fragment>
+        <h5>(For now.)</h5>
+      </p-fragment>
+    </div>
+    <img src="img/sad-boy.jpg" alt="A sad boy looking out of a window with rain drops" class="old-photo sepia from-right" style="width: 10em">
+  </div>
+</p-slide>
+<p-slide>
+  <h1 class="center">But!</h1>
+</p-slide>
+<p-slide>
+  <div class="two-columns self-center">
+    <img src="img/arm-with-top-hat.webp" alt="" role="presentation" class="sepia" style="width: 4em; transform: translateY(-10%); margin: 0">
+    <div style="width: auto; margin: 0">
+      <pre class="language-css from-left"><code>@container style(--look: featured) { ... }</code></pre>
+      <p-fragment>
+        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
+          style="top: 0%; width: 35em; left: -10%; height: 10em;">
+        <h4 class="center">It&rsquo;s ok for <em>custom properties</em><i>!</i></h4>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <pre class="self-center big language-css"><code>.card-container {
+  container-name: card;
+  /* No need to declare container-type!
+     Every element is a style container */
+}
+@container card style(--look: featured) {
+  .card {
+    background: salmon;
+  }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="center">&hellip; don't we have <em>classes</em> for this?</h3>
+  <img src="img/hardy-confused.webp" alt="Clip of a confused Oliver Hardy" class="fade-borders" style="height: 8em; --fade-border-width: .25em">
+</p-slide>
+<p-slide>
+  <pre class="language-css big self-center"><code>.card-container.featured .card {
+  background: salmon;
+}</code></pre>
+  <p-fragment style="transform: rotate(90deg) translate(-3.3em, -10.5em); position: absolute;">
+    <img src="img/pointer.webp" alt="" role="presentation" class="from-left sepia" style="width: 4em"></p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">A couple of reasons</h1>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">1. Reusability</h2>
+  <p>
+    We have <em>loose</em> control on what style are applied to the parent, but we want to <em>react</em> to them.
+  </p>
+  <p-notes>
+    The goal is avoid messing up the overall result. This applies to style queries in general, but custom
+    properties are good for predefined appearances.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">2. Inheritance</h2>
+  <p>Custom properties are <em>inherited</em>, classes are not. Selecting descendants is problematic.</p>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">3. Web Components</h2>
+  <p>Custom properties are <em>inherited</em> and thus get through the Shadow DOM's style encapsulation.</p>
+  <p-notes>
+    We don't have <code>::theme()</code> yet and forwarding parts is cumbersome, so this can be a way to set
+    predetermined styles in the root, and let all the custom elements deep in the Shadow DOM chain read it.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">4. Readability</h2>
+  <p>Properties have <em>explicit</em> meaning, so it should be clearer what we're querying for.</p>
+  <p-notes>This makes more sense when style queries support will be complete.</p-notes>
+</p-slide>
+<p-slide>
+  <div class="old-photo self-center sepia">
+    <table class="support-table">
+      <caption>CSS Container Style Queries support</caption>
+      <thead>
+        <tr>
+          <th><img src="img/chrome.svg" alt="Logo of Chrome"></th>
+          <th><img src="img/firefox.svg" alt="Logo of Firefox"></th>
+          <th><img src="img/safari.svg" alt="Logo of Safari"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>111</span></td>
+          <td><span>-</span></td>
+          <td><span>-</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">But even <a href="https://github.com/w3c/csswg-drafts/issues/8376" target="_blank" rel="noopener">more</a>
+    has to come&hellip;</h2>
+</p-slide>
+<p-slide>
+  <pre class="self-center language-css big"><code>.bar {
+  width: var(--progress-value);
+  background: red;
+}
+@container style(--progress-value >= 50%) {
+  .bar { background: yellow; }
+}
+@container style(--progress-value >= 90%) {
+  .bar { background: green; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="the-progress old-photo">
+    <div class="bar"></div>
+  </div>
+</p-slide>

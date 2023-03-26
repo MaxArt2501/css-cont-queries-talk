@@ -243,6 +243,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #403831;
 }
 
+a {
+  color: #785f3c;
+}
+
 .meme-text {
   font-family: 'Old Newspaper Types', serif;
   -webkit-text-stroke-width: 0.02em;
@@ -303,9 +307,7 @@ pre[class*='language-'] {
 
 .giko-slide {
   display: grid;
-  grid-template-areas:
-    'title title'
-    'photo link';
+  grid-template-areas: 'title title' 'photo link';
   gap: 1em 0.5em;
   place-items: center;
   justify-content: center;
@@ -320,9 +322,6 @@ pre[class*='language-'] {
   h2 {
     margin-top: 0;
     width: 7em;
-  }
-  a {
-    color: #785f3c;
   }
 }
 
@@ -578,5 +577,51 @@ pre[class*='language-'] {
     font-family: "Old Newspaper Types", serif;
     font-size: 60%;
     margin-bottom: 0.5em;
+  }
+}
+
+@property --progress-value {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+.the-progress {
+  height: 3.5em;
+  width: 16em;
+  margin: auto;
+}
+.bar {
+  height: 100%;
+  width: var(--progress-value);
+  background: red;
+  animation: progress-example 3s linear infinite alternate;
+
+  &::before {
+    content: var(--progress-value);
+  }
+}
+@keyframes progress-example {
+  0% {
+    --progress-value: 0%;
+    background-color: red;
+  }
+  49% {
+    background-color: red;
+  }
+  50% {
+    --progress-value: 50%;
+    background-color: yellow;
+  }
+  89% {
+    background-color: yellow;
+  }
+  90% {
+    --progress-value: 90%;
+    background-color: green;
+  }
+  100% {
+    --progress-value: 100%;
+    background-color: green;
   }
 }
