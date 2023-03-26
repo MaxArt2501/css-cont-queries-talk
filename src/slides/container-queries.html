@@ -19,7 +19,7 @@
   background: url(monalisa.jpg);
 }
 
-@container (min-width: 8rem) {
+@container (width > 8rem) {
   .frame {
     background: url(spring.jpg);
   }
@@ -57,9 +57,71 @@
 <code>}</code></pre>
     <p-fragment>
       <pre class="big language-css from-bottom"><code>p { font-size: 150%; }
-@container main (min-width: 40rem) {
+@container main (width > 40rem) {
   p { font-size: 200%; }
 }</code></pre>
     </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">About fonts&hellip;<br><small>Remember this?</small></h2>
+  <pre class="language-css self-center"><code>@media (width > 769px) {
+  h2 {
+    font-size: clamp(2rem, (100vw - 768px) / 40, 3rem);
+  }
+}</code></pre>
+  <p-fragment><img src="img/marker-circle.svg" alt="A marker circle around '100vw'" class="from-above" style="top: 41%; width: 8em; left: 37%;"></p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">We <em>still</em> can do it!</h2>
+  <ul class="self-center">
+    <li><code>cqw</code>: 1% of the container's width</li>
+    <li><code>cqh</code>: 1% of the container's height</li>
+    <li><code>cqi</code>: 1% of the container's inline size</li>
+    <li><code>cqb</code>: 1% of the container's block size</li>
+    <li><code>cqmin</code>: <code>min(1cqw, 1cqh)</code></li>
+    <li><code>cqmax</code>: <code>max(1cqw, 1cqh)</code></li>
+  </ul>
+</p-slide>
+<p-slide>
+  <div class="newspaper">
+    <article>
+      <header>
+        <h2>Person wins the race</h2>
+        <h5>Despite all the common things, a person arrived first at the Grand Prix. Another person, second.</h5>
+      </header>
+      <figure>
+        <img src="img/car.jpg" alt="Photo of a driver inside a race car from then '30s" class="sepia">
+        <figcaption>At the wheel, there&rsquo;s a real person. The car has four wheels and all kinds of moving parts.</figcaption>
+      </figure>
+      <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum animi excepturi enim rerum unde commodi incidunt, officiis modi sed libero. Fugit, dolore veniam? Qui ut inventore neque corrupti totam.</p>
+        <p>Ut repellat veniam aspernatur commodi quis! Excepturi commodi sequi reprehenderit nam rerum fugit obcaecati ullam ea facere veniam id labore, iste velit dignissimos soluta perferendis mollitia consequatur dicta, maxime quia.</p>
+        <p>Voluptate architecto, quasi quidem consequuntur reiciendis delectus doloribus. Reiciendis sunt omnis accusantium temporibus voluptas ex quia quos hic corrupti sint, illum cum doloremque asperiores quae aut saepe laudantium, ducimus repudiandae?</p>
+        <p>Harum esse sed nemo ex praesentium incidunt, beatae ad quam! Laboriosam iusto, corrupti nulla numquam beatae animi neque magnam impedit odio sed quisquam fuga dolor possimus velit, enim aliquid! Nam.</p>
+        <p>Debitis blanditiis ut cumque possimus, impedit nulla culpa nobis placeat distinctio sed modi velit obcaecati tempora cum, dolor neque tenetur nam doloremque odio dolorum! Consequuntur molestiae nobis deleniti nesciunt culpa.</p>
+      </section>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="old-photo self-center sepia">
+    <table class="support-table">
+      <caption>CSS Container Queries support</caption>
+      <thead>
+        <tr>
+          <th><img src="img/chrome.svg" alt="Logo of Chrome"></th>
+          <th><img src="img/firefox.svg" alt="Logo of Firefox"></th>
+          <th><img src="img/safari.svg" alt="Logo of Safari"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>105</span></td>
+          <td><span>110</span></td>
+          <td><span>16</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </p-slide>

@@ -9,3 +9,6 @@ p-deck {
     opacity: 1;
   }
 }
+p-slide[debug], p-slide.debug {
+  box-shadow: inset 0 0 0 1em red, inset 0 0 0 1.1em green;
+}

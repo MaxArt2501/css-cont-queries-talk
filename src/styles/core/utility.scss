@@ -121,11 +121,24 @@ $motion-entrance-timing-fn: cubic-bezier(.3,1.21,.79,.91);
   0% { transform: translateX(-4em); }
   100% { transform: translateX(0em); }
 }
-@each $dir in top right bottom left {
-  p-fragment[aria-hidden='false'] .from-#{$dir},
-  p-slide[aria-hidden='false'] .from-#{$dir}:not(p-fragment > .from-#{$dir}) {
-    animation: from-#{$dir} var(--fragment-duration, 300ms) $motion-entrance-timing-fn 1 forwards;
+@keyframes from-above {
+  0% { transform: scale(3); }
+  100% { transform: scale(1); }
+}
+@keyframes from-above {
+  0% { transform: scale(1); }
+  100% { transform: scale(.33333); }
+}
+p-deck:not([mode='speaker']) {
+  @each $dir in top right bottom left above below {
+    p-fragment[aria-hidden='false'] .from-#{$dir},
+    p-slide[aria-hidden='false'] .from-#{$dir}:not(p-fragment > .from-#{$dir}) {
+      animation: from-#{$dir} var(--fragment-duration, 300ms) $motion-entrance-timing-fn 1 forwards;
+    }
   }
+}
+.from-above, .from-below {
+  position: absolute;
 }
 
 .overlay-banner {

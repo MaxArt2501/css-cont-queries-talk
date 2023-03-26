@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));;
+const sass = require('gulp-sass')(require('sass'));
 const tap = require('gulp-tap');
 const cleanCSS = require('gulp-clean-css');
 const rimraf = require('rimraf');
@@ -38,7 +38,7 @@ exports['slides+reload'] = series(slides, reload);
 function css() {
   return src('src/styles/*.scss', { sourcemaps: true })
     .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
+    // .pipe(cleanCSS())
     .pipe(dest('public/css', { sourcemaps: true }))
     .pipe(browserSync.stream());
 }
