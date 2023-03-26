@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container Queries: CSS' (un)expected revolution</title>
+  <base href="..">
+  <link rel="shortcut icon" href="img/ts.png" type="image/png">
+  <link rel="stylesheet" href="vendor/prismjs/themes/prism.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="stylesheet" href="css/presentation.css">
+</head>
+
+<body>
+  <p-deck>
+    <p-slide class="cover">
+  <h1>
+    Container Queries
+    <small>CSS (un)expected revolution</small>
+  </h1>
+  <figure>
+    <img src="img/css-day.svg" alt="CSS Day Logo">
+    <figcaption>Faenza, <time datetime="2023-03-31">2023-03-31</time></figcaption>
+  </figure>
+  <h4>
+    Massimo Artizzu
+    <small>Web Dev Manager, <a href="https://antreem.com/">Antreem</a></small>
+  </h4>
+</p-slide>
+<p-slide class="justify-start">
+  <img src="img/logo-antreem-border.svg" alt="Antreem logo" class="antreem-logo">
+  <div class="my-data">
+    <img src="img/maxart.jpg" alt="My face" class="my-face">
+    <h2>Massimo Artizzu</h2>
+    <p>
+      Web Dev Manager<br>
+      <a href="https://antreem.com">Antreem</a>@<a href="https://gellify.com" class="gellify">Gellify</a>
+    </p>
+  </div>
+  <div class="my-info">
+    <h4>
+      <a href="https://github.com/MaxArt2501"><img src="img/github.svg" alt="GitHub logo"></a> /
+      <a href="https://mastodon.social/MaxArt2501"><img src="img/mastodon.svg" alt="Mastodon logo"></a> /
+      <a href="https://twitter.com/MaxArt2501"><img src="img/twitter.svg" alt="Twitter logo"></a> /
+      <a href="https://dev.to/MaxArt2501"><img src="img/dev-to.svg" alt="dev.to logo"></a>
+      @MaxArt2501
+    </h4>
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h3>You can find these slides at</h3>
+  <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" style="height: 7em; margin-bottom: 1em;">
+  <a
+    href="https://maxart2501.github.io/css-security-talk/css-day/">maxart2501.github.io/css-cont-queries-talk/css-day/</a>
+</p-slide>
+    <p-slide class="justify-start">
+  <h2 class="our-header from-left">Before&hellip;</h2>
+  <img src="img/ox-cart.jpg" alt="Vintage photo of an ox cart" class="full-media sepia full-media-y old-photo from-top">
+  <p-notes>
+    It was not 4 years ago that I was complaining about how things were moving slowly for CSS. Grids were the last new things
+    and it took years to be refined and specified, and even if browsers were rather quick to implement it
+  </p-notes>
+</p-slide>
+<p-slide class="justify-start" style="--slide-bg: #5a4c40">
+  <h2 class="our-header text-invert from-bottom">Houdini</h2>
+  <img src="img/harry-houdini.jpg" alt="Harry Houdini trying to get free of chains" class="full-media sepia from-right fade-borders-y">
+  <p-notes>
+    So that I talked about CSS Houdini and how it supposed to let us break free of that situation. Now, the project did some
+    things that promised, but not every one of its APIs has been fully specified - let alone implemented in browsers, not
+    even Chrome. And now the initial push has basically vanished.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h1 class="center">Now&hellip;</h1>
+</p-slide>
+<p-slide>
+  <h1 class="center">Logical properties</h1>
+  <pre class="language-css big self-center"><code>.box {
+  padding-inline-start: 1em;
+  margin-block: 2em;
+  text-align: start;
+  inset: 0;
+}</code></pre>
+  </p-slide>
+<p-slide>
+  <h1 class="center">Color Functions</h1>
+  <pre class="language-css big self-center"><code>.rainbow {
+  color: lch(80% 100 50 / 0.5);
+  color: color(display-p3 0.9 0 0.5);
+  color: color-mix(in rgb, salmon 30%, blue);
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h1 class="center">Cascade Layers</h1>
+  <p-fragment class="self-center center">
+    <img src="img/confused.jpg" alt="Vintage photo of a visibly confused person" style="height: 8em" class="sepia old-photo from-bottom">
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center"><code>:has()</code></h1>
+  <pre class="language-css big self-center"><code>form:has(:invalid) { border: red; }
+
+article:has(> header) { margin-top: 1em; }
+
+h1:has(+ p) { margin-bottom: .5em; }</code></pre>
+</p-slide>
+<p-slide class="justify-start">
+  <h1 class="center uppercase text-invert from-top">IE is dead</h1>
+  <img src="img/cheering.jpg" alt="Vintage photo of a cheering crowd" class="full-media sepia from-bottom full-media-y old-photo">
+</p-slide>
+<p-slide>
+  <h1 class="center">And even more&hellip;</h1>
+  <p-fragment style="position: absolute; top: 15%; left: 20%"><code>conic-gradient()</code></p-fragment>
+  <p-fragment style="position: absolute; top: 70%; left: 50%"><code>aspect-ratio</code></p-fragment>
+  <p-fragment style="position: absolute; top: 85%; left: 10%"><h4>CSS Isolation</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 30%; left: 40%"><h4>Media Queries lvl4+</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 60%; left: 30%"><h4>Variable Fonts</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 0%; left: 60%"><code>@supports</code></p-fragment>
+  <p-fragment style="position: absolute; top: 80%; left: 60%"><h4>CSS Containment</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 0%; left: 10%"><h4>Shadow Parts</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 70%; left: 20%"><h4>Scroll Snap</h4></p-fragment>
+  <p-fragment style="position: absolute; top: 55%; left: 5%"><code>min()</code></p-fragment>
+  <p-fragment style="position: absolute; top: 30%; left: 15%"><code>clamp()</code></p-fragment>
+  <p-fragment style="position: absolute; top: 90%; left: 55%"><code>:focus-visible</code></p-fragment>
+</p-slide>
+    <p-slide>
+  <h1 class="center">But a long time ago&hellip;</h1>
+  <p-fragment>
+    <h1 class="center"><code>@media</code></h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="our-header from-left">The problem with media queries</h3>
+  <img src="img/tailor.jpg" alt="Vintage picture of tailors takeing measurement" class="from-right full-media sepia full-media-y old-photo sepia" style="right: 0;">
+  <p-fragment class="self-start">
+    <pre class="language-css big"><code>@media (min-width: 1024px) {
+  main {
+    grid-template-columns:
+      24rem 1fr 24rem
+  }
+}</code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <img src="img/cinema.webp" alt="Vintage photo of a theater" class="sepia old-photo full-media sepia full-media-y" style="right: 10%;">
+  <p-fragment>
+    <h1 class="center from-top" style="margin-block: -1em 1.2em;">Only for viewports</h1>
+    <img src="img/pointer.webp" alt="" role="presentation" class="sepia from-left" style="height: 6em;">
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">What about <em>components</em>?</h2>
+  <img src="img/laurel-confused.webp" alt="Clip of a confused Stan Laurel" class="fade-borders" style="height: 8em; --fade-border-width: .25em">
+</p-slide>
+<p-slide>
+  <img src="img/old-newspaper.png" alt="A picture of a fake old newspaper" class="full-media">
+  <p-fragment>
+    <div class="frame" style="inset: 15.8% 31.5% 52.2% 46%; color: blue"></div>
+    <div class="frame" style="inset: 15.8% 53.7% 37.2% 38.8%; color: blue"></div>
+  </p-fragment>
+  <p-fragment>
+    <div class="frame" style="inset: 78.5% 31.3% 5.5% 53.7%; color: red"></div>
+    <div class="frame" style="inset: 63% 53.6% 5.4% 31.4%; color: red"></div>
+  </p-fragment>
+  <p-fragment class="two-columns center">
+    <div style="padding-inline-end: 22%;">Different sizes&hellip;</div>
+    <div style="padding-inline-start: 22%;">&hellip; different layouts</div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="center">How we used to do it</h3>
+  <p-fragment>
+    <code class="from-left" style="position: absolute;top: 28%;left: 20%">flex-wrap: wrap</code>
+    <img src="img/penny-farthing-1.png" alt="Picture of a man on a penny farthing" class="from-right" style="height: 6em; margin-left: 58%;">
+  </p-fragment>
+  <p-fragment>
+    <img src="img/penny-farthing-2.png" alt="Picture of a man on a penny farthing" class="from-right" style="height: 6em;margin: -1em 0 0 5%;">
+    <code class="from-right" style="position: absolute;top: 65%;left: 29%;text-indent: -1.3em;padding-left: 1.5em;width: 57%;">grid-template-columns: repeat(auto-fi*, minmax(10rem, 1fr))</code>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <div class="giko-slide">
+    <img src="img/css-day-2019.png" alt="CSSDay 2019" class="from-top sepia">
+    <img src="img/giko.jpg" alt="Photo of Giacomo Zinetti" class="from-left">
+    <h2 class="center from-right"><a href="https://www.youtube.com/watch?v=afrqNUc7zz0" target="_blank" rel="noopener">La fine delle media query</a></h2>
+  </div>
+</p-slide>
+<p-slide>
+  <h3 class="our-header from-top">Element queries</h3>
+  <div class="self-center">
+    <pre class="language-html from-right"><code>&lt;div class="widget-name">
+  &lt;h2>Element responsiveness FTW!&lt;/h2>
+&lt;/div></code></pre>
+    <pre class="language-css from-bottom"><code>.widget-name h2 {
+  font-size: 12px;
+}
+.widget-name[min-width~="400px"] h2 {
+  font-size: 18px;
+}</code></pre>
+  </div>
+  <p-fragment class="landing sepia" style="top: 10%; right: 15%">
+    <img src="img/js.png" alt="Logo of JavaScript" style="height: 4em; transform: rotate(15deg); filter: drop-shadow(.05em .05em .1em rgba(0, 0, 0, .35))">
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <h1>&ldquo;Can&apos;t we <em>just</em>&hellip;?&rdquo;</h1>
+  <p-fragment class="two-columns">
+    <pre class="language-css"><code>.painting {
+  background: url(monalisa.jpg);
+
+  @element (min-width: 8rem) {
+    background: url(spring.jpg);
+  }
+}</code></pre>
+    <div class="old-frame"></div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="our-header">The Problem</h1>
+  <div class="two-columns align-center">
+    <p-fragment>
+      <pre class="language-css from-left"><code>.box-o-stuff {
+  width: 1000px;
+
+  @element (min-width: 800px) {
+    width: 500px;
+  }
+}</code></pre>
+    </p-fragment>
+    <p-fragment>
+      <pre class="language-css from-right"><code>.box-o-stuff {
+  @element (max-width: 800px) {
+    div { width: 1000px; }
+  }
+}</code></pre>
+    </p-fragment>
+  </div>
+  <p-notes>
+    Not only the element can be given "contradictory" sizes, but also its descendants can alter its sizes
+    so that circular size recalculations take place. Among the first proposed solution was to limit these
+    recalculations to 3, but it wasn't ideal anyway.
+  </p-notes>
+</p-slide>
+<p-slide style="--slide-bg: hsl(37, 44%, 92%)">
+  <div class="two-columns self-center center">
+    <div class="from-left" style="width: auto; background: radial-gradient(closest-side, #40383180, transparent) 0 100% / 80% 1em no-repeat;">
+      <h5>&ldquo;1000px!&rdquo;</h5>
+      <img src="img/boxer-left.webp" alt="An old style boxer facing right" class="sepia" style="height: 8em">
+    </div>
+    <div class="from-right" style="width: auto; background: radial-gradient(closest-side, #40383180, transparent) 100% 100% / 80% 1em no-repeat;">
+      <h5>&ldquo;500px!&rdquo;</h5>
+      <img src="img/boxer-right.webp" alt="An old style boxer facing right" class="sepia" style="height: 8em">
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <h1 class="our-header from-left">So&hellip; how can<br>we solve that?</h1>
+  <img src="img/thinking.webp" alt="Vintage picture of a woman thinking in front of a typewriter"
+    class="sepia from-right" style="height: 12em; margin-top: -8em; align-self: flex-end;">
+</p-slide>
+    <p-slide>
+  <h1 class="center">Container Queries</h1>
+</p-slide>
+<p-slide>
+  <div class="two-columns" style="justify-content: space-between;">
+    <h3 class="center from-left" style="margin: 0; width: 8em;">CSS Containment</h3>
+    <h3 class="center from-right" style=" margin: 0; width: 8em;">CSS Container queries</h3>
+  </div>
+  <img src="img/handshake.webp" alt="A handshake" class="sepia from-bottom" style="height: 8em; margin-top: 1em;">
+</p-slide>
+<p-slide>
+  <h2 class="center">Containing things&hellip;</h2>
+  <div class="two-columns self-center">
+    <code class="self-center from-left">contain:</code>
+    <ul style="background: url(img/brace.svg) 0 0/contain no-repeat; padding-inline-start: 1.5em;" class="from-right">
+      <li><p-fragment><code>layout</code></p-fragment></li>
+      <li><p-fragment><code>size</code></p-fragment></li>
+      <li><p-fragment><code>paint</code></p-fragment></li>
+      <li><p-fragment><code>style</code></p-fragment></li>
+    </ul>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Layout containment</h2>
+  <p class="center">
+    The internal layout is <em>isolated</em>: it can't affect the external layout, nor external factors can affect the internal layout.
+  </p>
+  <p class="center">
+    It's like a new &ldquo;viewport&rdquo;.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+      Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+    </article>
+    <article>
+      <h4>Here&rsquo;s no contain</h4>
+      <p>
+        SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita? Laborum ducimus fugit excepturi itaque eum sapiente possimus vero saepe dicta quo. Quia omnis odio placeat quis!
+        Fugiat dolor ad laudantium aliquam beatae?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+      Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+    </article>
+    <article style="contain: layout;">
+      <h4>Lo, here&rsquo;s contain: layout</h4>
+      <p>
+        SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita? Laborum ducimus fugit excepturi itaque eum sapiente possimus vero saepe dicta quo. Quia omnis odio placeat quis!
+        Fugiat dolor ad laudantium aliquam beatae?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Size containment</h2>
+  <p class="center">
+    The element's size is <em>not</em> determined by its descendants.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Ye olde news of the worlde</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+      <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia" style="contain: size; margin-top: .55em; height: 4em;">
+    <article>
+      <h4>Hark, contain: size!</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
+      <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+      <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
+        Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
+        Possimus veniam tempora cupiditate impedit amet quod error quidem libero, illum atque expedita?
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Paint containment</h2>
+  <p class="center">
+    Nothing is rendered outside the element's boundaries.
+  </p>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article>
+      <h4>Absolutely positioned img</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat" style="position: absolute;">
+      <p style="margin-inline-start: 10em; margin-left: 10em;">LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide class="articles">
+  <div class="old-photo sepia">
+    <article style="contain: paint;">
+      <h4>And lo, contain: paint</h4>
+      <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat" style="position: absolute;">
+      <p style="margin-inline-start: 10em; margin-left: 10em;">LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
+        Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+      </p>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Style containment</h2>
+  <p class="center">
+    <em>Not</em> style encapsulation. It's just for counters.
+  </p>
+  <p-fragment class="self-center">
+    <pre class="language-css big"><code>p::before {
+  content: counter(num);
+}</code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">What do we need?</h2>
+  <ul class="self-center">
+    <li>
+      <p-fragment>
+        <img src="img/pointer.webp" role="presentation" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
+        <code>layout</code>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <img src="img/pointer.webp" role="presentation" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
+        (<code>inline-</code>)<code>size</code>
+      </p-fragment>
+    </li>
+  </ul>
+</p-slide>
+    <p-slide>
+  <div class="two-columns align-center">
+    <h2 class="our-header from-left">Container Queries, take 2</h2>
+    <img src="img/alfred.jpg" alt="Alfred Hitchock holding a clapperboard for his film 'Psycho'" class="old-photo sepia from-right">
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">Declaring a <em>container</em></h2>
+  <pre class="language-css big self-center"><code>.container {
+  container-type: inline-size;
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <pre class="language-css"><code>.container {
+  container-type: inline-size;
+}
+.frame {
+  background: url(monalisa.jpg);
+}
+
+@container (width > 8rem) {
+  .frame {
+    background: url(spring.jpg);
+  }
+}</code></pre>
+    <div>
+      <pre class="language-html"><code>&lt;div class="container">
+  &lt;div class="frame">&lt;/div>
+&lt;/div></code></pre>
+      <p-fragment class="center">
+        <div class="old-frame"></div>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center" style="margin-bottom: .25em;"><em>Nested</em> containers?</h2>
+  <p-fragment class="self-center">
+    <pre class="big language-html from-bottom"><code>&lt;main class="container">
+  &lt;header>...&lt;/header>
+  &lt;aside>...&lt;/aside>
+  &lt;section>
+    &lt;article class="container">
+      &lt;p>...&lt;/p>
+    &lt;/article>
+  &lt;/section>
+&lt;/main></code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <div class="self-center">
+    <pre class="big language-css from-top"><code>main.container {
+  container-name: main;</code>
+  <p-fragment><code>/* Or together: */
+  container: main / inline-size;</code></p-fragment>
+<code>}</code></pre>
+    <p-fragment>
+      <pre class="big language-css from-bottom"><code>p { font-size: 150%; }
+@container main (width > 40rem) {
+  p { font-size: 200%; }
+}</code></pre>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">About fonts&hellip;<br><small>Remember this?</small></h2>
+  <pre class="language-css self-center"><code>@media (width > 769px) {
+  h2 {
+    font-size: clamp(2rem, (100vw - 768px) / 40, 3rem);
+  }
+}</code></pre>
+  <p-fragment><img src="img/marker-circle.svg" alt="A marker circle around '100vw'" class="from-above" style="top: 41%; width: 8em; left: 37%;"></p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">We <em>still</em> can do it!</h2>
+  <ul class="self-center">
+    <li><code>cqw</code>: 1% of the container's width</li>
+    <li><code>cqh</code>: 1% of the container's height</li>
+    <li><code>cqi</code>: 1% of the container's inline size</li>
+    <li><code>cqb</code>: 1% of the container's block size</li>
+    <li><code>cqmin</code>: <code>min(1cqw, 1cqh)</code></li>
+    <li><code>cqmax</code>: <code>max(1cqw, 1cqh)</code></li>
+  </ul>
+</p-slide>
+<p-slide>
+  <div class="newspaper">
+    <article>
+      <header>
+        <h2>Person wins the race</h2>
+        <h5>Despite all the common things, a person arrived first at the Grand Prix. Another person, second.</h5>
+      </header>
+      <figure>
+        <img src="img/car.jpg" alt="Photo of a driver inside a race car from then '30s" class="sepia">
+        <figcaption>At the wheel, there&rsquo;s a real person. The car has four wheels and all kinds of moving parts.</figcaption>
+      </figure>
+      <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum animi excepturi enim rerum unde commodi incidunt, officiis modi sed libero. Fugit, dolore veniam? Qui ut inventore neque corrupti totam.</p>
+        <p>Ut repellat veniam aspernatur commodi quis! Excepturi commodi sequi reprehenderit nam rerum fugit obcaecati ullam ea facere veniam id labore, iste velit dignissimos soluta perferendis mollitia consequatur dicta, maxime quia.</p>
+        <p>Voluptate architecto, quasi quidem consequuntur reiciendis delectus doloribus. Reiciendis sunt omnis accusantium temporibus voluptas ex quia quos hic corrupti sint, illum cum doloremque asperiores quae aut saepe laudantium, ducimus repudiandae?</p>
+        <p>Harum esse sed nemo ex praesentium incidunt, beatae ad quam! Laboriosam iusto, corrupti nulla numquam beatae animi neque magnam impedit odio sed quisquam fuga dolor possimus velit, enim aliquid! Nam.</p>
+        <p>Debitis blanditiis ut cumque possimus, impedit nulla culpa nobis placeat distinctio sed modi velit obcaecati tempora cum, dolor neque tenetur nam doloremque odio dolorum! Consequuntur molestiae nobis deleniti nesciunt culpa.</p>
+      </section>
+    </article>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="old-photo self-center sepia">
+    <table class="support-table">
+      <caption>CSS Container Queries support</caption>
+      <thead>
+        <tr>
+          <th><img src="img/chrome.svg" alt="Logo of Chrome"></th>
+          <th><img src="img/firefox.svg" alt="Logo of Firefox"></th>
+          <th><img src="img/safari.svg" alt="Logo of Safari"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>105</span></td>
+          <td><span>110</span></td>
+          <td><span>16</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-slide>
+    <p-slide class="center">
+  <h1>But wait, there&rsquo;s more!</h1>
+</p-slide>
+<p-slide>
+  <h4 class="center">With Media Queries, we can query <em>not just sizes</em></h4>
+  <p-fragment class="self-center from-bottom">
+    <pre class="language-css"><code>@media (pointer: coarse) {
+  ...
+}
+@media (prefers-reduced-motion: reduce) {
+  ...
+}</code></pre>
+  </p-fragment>
+  <p-fragment class="from-bottom">
+    <h3 class="center">What about Container Queries?</h3>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">Actually&hellip;</h1>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    According to <a href="https://www.w3.org/TR/css-contain-3/#style-container" target="_blank" rel="noopener">the spec</a>,
+    we <em>should</em> be able to do this:</h2>
+  <p-fragment class="from-bottom self-center">
+    <pre class="language-css big"><code>@container style(background: white) {
+  header { color: #222; }
+}</code></pre>
+  </p-fragment>
+  <p-fragment>
+    <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
+      style="top: 19%; width: 45em; left: -32%; height: 12em;">
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <img src="img/surprised.webp" alt="Vintage picture of a surprised child" class="full-media full-media-y sepia old-photo">
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <div>
+      <h2 class="our-header from-left align-center">&hellip; but we can&rsquo;t.</h2>
+      <p-fragment>
+        <h5>(For now.)</h5>
+      </p-fragment>
+    </div>
+    <img src="img/sad-boy.jpg" alt="A sad boy looking out of a window with rain drops" class="old-photo sepia from-right" style="width: 10em">
+  </div>
+</p-slide>
+<p-slide>
+  <h1 class="center">But!</h1>
+</p-slide>
+<p-slide>
+  <div class="two-columns self-center">
+    <img src="img/arm-with-top-hat.webp" alt="" role="presentation" class="sepia" style="width: 4em; transform: translateY(-10%); margin: 0">
+    <div style="width: auto; margin: 0">
+      <pre class="language-css from-left"><code>@container style(--look: featured) { ... }</code></pre>
+      <p-fragment>
+        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
+          style="top: 0%; width: 35em; left: -10%; height: 10em;">
+        <h4 class="center">It&rsquo;s ok for <em>custom properties</em><i>!</i></h4>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <pre class="self-center big language-css"><code>.card-container {
+  container-name: card;
+  /* No need to declare container-type!
+     Every element is a style container */
+}
+@container card style(--look: featured) {
+  .card {
+    background: salmon;
+  }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="center">&hellip; don't we have <em>classes</em> for this?</h3>
+  <img src="img/hardy-confused.webp" alt="Clip of a confused Oliver Hardy" class="fade-borders" style="height: 8em; --fade-border-width: .25em">
+</p-slide>
+<p-slide>
+  <pre class="language-css big self-center"><code>.card-container.featured .card {
+  background: salmon;
+}</code></pre>
+  <p-fragment style="transform: rotate(90deg) translate(-3.3em, -10.5em); position: absolute;">
+    <img src="img/pointer.webp" alt="" role="presentation" class="from-left sepia" style="width: 4em"></p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">A couple of reasons</h1>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">1. Reusability</h2>
+  <p>
+    We have <em>loose</em> control on what style are applied to the parent, but we want to <em>react</em> to them.
+  </p>
+  <p-notes>
+    The goal is avoid messing up the overall result. This applies to style queries in general, but custom
+    properties are good for predefined appearances.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">2. Inheritance</h2>
+  <p>Custom properties are <em>inherited</em>, classes are not. Selecting descendants is problematic.</p>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">3. Web Components</h2>
+  <p>Custom properties are <em>inherited</em> and thus get through the Shadow DOM's style encapsulation.</p>
+  <p-notes>
+    We don't have <code>::theme()</code> yet and forwarding parts is cumbersome, so this can be a way to set
+    predetermined styles in the root, and let all the custom elements deep in the Shadow DOM chain read it.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">4. Readability</h2>
+  <p>Properties have <em>explicit</em> meaning, so it should be clearer what we're querying for.</p>
+  <p-notes>This makes more sense when style queries support will be complete.</p-notes>
+</p-slide>
+<p-slide>
+  <div class="old-photo self-center sepia">
+    <table class="support-table">
+      <caption>CSS Container Style Queries support</caption>
+      <thead>
+        <tr>
+          <th><img src="img/chrome.svg" alt="Logo of Chrome"></th>
+          <th><img src="img/firefox.svg" alt="Logo of Firefox"></th>
+          <th><img src="img/safari.svg" alt="Logo of Safari"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>111</span></td>
+          <td><span>-</span></td>
+          <td><span>-</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">But even <a href="https://github.com/w3c/csswg-drafts/issues/8376" target="_blank" rel="noopener">more</a>
+    has to come&hellip;</h2>
+</p-slide>
+<p-slide>
+  <pre class="self-center language-css big"><code>.bar {
+  width: var(--progress-value);
+  background: red;
+}
+@container style(--progress-value >= 50%) {
+  .bar { background: yellow; }
+}
+@container style(--progress-value >= 90%) {
+  .bar { background: green; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="the-progress old-photo">
+    <div class="bar"></div>
+  </div>
+</p-slide>
+    <p-slide>
+  <h4 class="our-header">Links</h4>
+  <ul class="links">
+    <li>
+      🔗 CSS container queries are finally here
+      <a href="https://ishadeed.com/article/container-queries-are-finally-here/">
+        ishadeed.com/article/container-queries-are-finally-here/
+      </a>
+    </li>
+    <li>
+      🔗 Getting Started with Style Queries - Una Kravets
+      <a href="https://developer.chrome.com/en/blog/style-queries/">
+        developer.chrome.com/en/blog/style-queries/
+      </a>
+    </li>
+    <li>
+      🔗 [css-contain-4] Define a range syntax for style container queries
+      <a href="https://github.com/w3c/csswg-drafts/issues/8376">
+        github.com/w3c/csswg-drafts/issues/8376
+      </a>
+    </li>
+  </ul>
+</p-slide>
+    <p-slide>
+  <h1 class="center">That's all, folks!<br />👋</h1>
+</p-slide>
+<p-slide>
+  <h3 class="center final-link">
+    <a href="https://maxart2501.github.io/css-security-talk/css-day/">
+      maxart2501.github.io/css-security-talk/css-day/
+    </a>
+    <img src="img/qr-slides.svg" alt="QR Code for the presentation's link">
+  </h3>
+</p-slide>
+<p-slide>
+  <pre class="self-center big"><code class="language-scss">@use 'conf.scss';
+@each $question of conf.$questions {
+  answer: $question;
+}</code></pre>
+</p-slide>
+  </p-deck>
+  <div role="progressbar" class="presentation-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" title="Presentation progress"></div>
+  <div role="toolbar" class="presentation-toolbar">
+    <button type="button" class="toggle-mode" title="Toggle speaker mode" aria-label="Toggle speaker mode (Alt-M)">
+      <svg viewBox="0 0 1 1">
+        <path stroke-width="0.1" stroke="currentColor" fill="none"
+          d="M.05 .5h.6v-.45h-.6v.9h.6v-.45M.75 .05h.25M.75 .2h.25M.75 .35h.25" />
+      </svg>
+    </button>
+    <button type="button" class="fullscreen" title="Toggle fullscreen mode" aria-label="Toggle fullscreen mode">
+      <svg viewBox="0 0 1 1">
+        <g stroke="currentColor" fill="none" stroke-width="0.1">
+          <path d="M.05 .3v-.25h.25M.7 .05h.25v.25M.95 .7v.25h-.25M.3 .95h-.25v-.25" />
+          <path d="M.05 .3h.25v-.25M.7 .05v.25h.25M.95 .7h-.25v.25M.3 .95v-.25h-.25" />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <nav class="presentation-nav">
+    <button type="button" class="previous" title="Go backward" aria-label="Go backward"></button>
+    <button type="button" class="next" title="Go forward" aria-label="Go forward"></button>
+  </nav>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/presentation.js"></script>
+  <script defer src="vendor/prismjs/prism.js"></script>
+  <script defer src="vendor/prismjs/components/prism-typescript.js"></script>
+  <script defer src="vendor/prismjs/components/prism-scss.js"></script>
+</body>
+
+</html>
