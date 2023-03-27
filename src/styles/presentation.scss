@@ -198,25 +198,44 @@ p-fragment.landing {
 }
 
 .big-x {
-  &-wrapper {
-    position: relative;
+  position: absolute;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  opacity: 1;
+
+  &::before, &::after {
+    content: '';
+    background-size: 100% 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+
+    box-sizing: border-box;
+    grid-area: 1 / 1;
+    padding-right: 100%;
+  }
+  &::before {
+    background-image: url(../img/brush-stroke-1.png);
+    transform: rotate(-30deg);
+  }
+  &::after {
+    background-image: url(../img/brush-stroke-2.png);
+    transform: rotate(30deg);
   }
 
-  &::before,
-  &::after {
-    content: "";
-    top: -25%;
-    left: 50%;
-    height: 150%;
-    width: 0.5em;
-    border-radius: 0.25em;
-    transform: rotate(45deg);
-    background: rgba(red, 0.9);
-    position: absolute;
+  &:not(p-fragment[aria-hidden='true'] &):not(:is(p-fragment[aria-hidden='true'])) {
+    &::before, &::after {
+      animation: big-stroke calc(var(--fragment-duration, 300ms) / 2) ease-in 1 forwards;
+    }
+    &::after {
+      animation-delay: calc(var(--fragment-duration, 300ms) / 2);
+    }
   }
-  &::after {
-    transform: rotate(-45deg);
-  }
+}
+
+@keyframes big-stroke {
+  from { padding-right: 100%; }
+  to { padding-right: 0%; }
 }
 
 .sketchy-arrow {
@@ -625,3 +644,5 @@ pre[class*='language-'] {
     background-color: green;
   }
 }
+
+
