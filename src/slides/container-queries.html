@@ -14,16 +14,16 @@
   <div class="two-columns align-center">
     <pre class="language-css"><code>.container {
   container-type: inline-size;
-}
-.frame {
+}</code>
+<p-fragment><code>.frame {
   background: url(monalisa.jpg);
-}
+}</code></p-fragment>
 
-@container (width > 8rem) {
+<p-fragment><code>@container (width > 8rem) {
   .frame {
     background: url(spring.jpg);
   }
-}</code></pre>
+}</code></p-fragment></pre>
     <div>
       <pre class="language-html"><code>&lt;div class="container">
   &lt;div class="frame">&lt;/div>
@@ -70,7 +70,10 @@
     font-size: clamp(2rem, (100vw - 768px) / 40, 3rem);
   }
 }</code></pre>
-  <p-fragment><img src="img/marker-circle.svg" alt="A marker circle around '100vw'" class="from-above" style="top: 41%; width: 8em; left: 37%;"></p-fragment>
+  <p-fragment>
+    <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'"
+      class="from-above" style="top: 54.6%;width: 8em;left: 37.3%;height: 4em;">
+  </p-fragment>
 </p-slide>
 <p-slide>
   <h2 class="center">We <em>still</em> can do it!</h2>

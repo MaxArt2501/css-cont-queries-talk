@@ -2,7 +2,7 @@
   <h1>But wait, there&rsquo;s more!</h1>
 </p-slide>
 <p-slide>
-  <h4 class="center">With Media Queries, we can query <em>not just sizes</em></h4>
+  <h4 class="center">With Media queries, we can query <em>not just sizes</em></h4>
   <p-fragment class="self-center from-bottom">
     <pre class="language-css"><code>@media (pointer: coarse) {
   ...
@@ -12,7 +12,7 @@
 }</code></pre>
   </p-fragment>
   <p-fragment class="from-bottom">
-    <h3 class="center">What about Container Queries?</h3>
+    <h3 class="center">What about Container queries?</h3>
   </p-fragment>
 </p-slide>
 <p-slide>
@@ -55,8 +55,8 @@
     <div style="width: auto; margin: 0">
       <pre class="language-css from-left"><code>@container style(--look: featured) { ... }</code></pre>
       <p-fragment>
-        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
-          style="top: 0%; width: 35em; left: -10%; height: 10em;">
+        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--look: featured)'" class="from-above"
+          style="top: 10%;width: 28em;left: 3%;height: 7em;">
         <h4 class="center">It&rsquo;s ok for <em>custom properties</em><i>!</i></h4>
       </p-fragment>
     </div>
@@ -67,12 +67,12 @@
   container-name: card;
   /* No need to declare container-type!
      Every element is a style container */
-}
-@container card style(--look: featured) {
+}</code><p-fragment><img src="img/brush-stroke-1.png" alt="Brush underline under 'no need'" style="position: absolute;width: 5em;top: 29%;left: 13%;filter: saturate(.8)"></p-fragment>
+<p-fragment><code>@container card style(--look: featured) {
   .card {
     background: salmon;
   }
-}</code></pre>
+}</code></p-fragment></pre>
 </p-slide>
 <p-slide>
   <h3 class="center">&hellip; don't we have <em>classes</em> for this?</h3>
@@ -151,9 +151,40 @@
 @container style(--progress-value >= 90%) {
   .bar { background: green; }
 }</code></pre>
+<p-fragment>
+  <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--progress-value >= 50%)'" class="from-above"
+    style="top: 11%;width: 52em;left: -46%;height: 10em;">
+  <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--progress-value >= 90%)'" class="from-above"
+    style="top: 32%;width: 52em;left: -46%;height: 10em;">
+</p-fragment>
 </p-slide>
 <p-slide>
   <div class="the-progress old-photo">
     <div class="bar"></div>
   </div>
+  <p-fragment class="landing" style="top: 10%; right: 15%">
+    <img src="img/js.png" alt="Logo of JavaScript" class="sepia" style="height: 4em; transform: rotate(15deg); filter: drop-shadow(.05em .05em .1em rgba(0, 0, 0, .35))">
+    <div class="big-x" style="width: 100%; z-index: 1; transform: scale(1.5) rotate(15deg) translate(-15%, -80%);"></div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h4 class="center">In the end&hellip;</h4>
+  <p-fragment>
+    <h1 class="center">Can I use them?</h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">&ldquo;Let&rsquo;s ship it!&rdquo;</h2>
+  <img src="img/ship.png" alt="Illustration of a sail ship at sea" style="height: 10em;" class="sepia">
+  <p-notes>
+    <p>
+      It's clear that CQ, with their ability to set styles based on the containers, are going to be the
+      Next Big Thing in layouts and styles. It's going to be even clearer when the style queries specification
+      will be fully defined and implemented in all browsers.
+    </p>
+    <p>
+      Every widget that we used to design only as full-width components can now be rethought as adaptable
+      functionalities that can fit every spot of our website.
+    </p>
+  </p-notes>
 </p-slide>

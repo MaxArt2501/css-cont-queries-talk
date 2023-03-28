@@ -209,7 +209,7 @@ p-fragment.landing {
     background-position: center;
     background-repeat: no-repeat;
     background-clip: content-box;
-
+    filter: saturate(.8);
     box-sizing: border-box;
     grid-area: 1 / 1;
     padding-right: 100%;
@@ -304,23 +304,6 @@ pre[class*='language-'] {
 
   > p-fragment > code {
     background: none;
-  }
-}
-
-
-.frame {
-  position: absolute;
-  border: .1em solid;
-  border-radius: .25em;
-  overflow: hidden;
-  opacity: .75;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: currentColor;
-    opacity: .5;
   }
 }
 
@@ -645,4 +628,20 @@ pre[class*='language-'] {
   }
 }
 
+.waving-hand {
+  margin-top: -1em;
+  height: 4em;
+  filter: sepia(1);
+  transform-origin: 51% 94%;
 
+  p-slide[aria-hidden='false'] & {
+    animation: waving var(--fragment-duration, 300ms) 3 forwards;
+  }
+}
+
+@keyframes waving {
+  0% { transform: rotate(-15deg); }
+  25% { transform: rotate(0deg); }
+  75% { transform: rotate(-30deg); }
+  100% { transform: rotate(-15deg); }
+}
