@@ -51,13 +51,17 @@
 </p-slide>
 <p-slide class="center">
   <h3>You can find these slides at</h3>
-  <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" style="height: 7em; margin-bottom: 1em;">
+  <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" style="height: 7em; margin-bottom: 1em;" class="old-photo sepia">
   <a
     href="https://maxart2501.github.io/css-security-talk/css-day/">maxart2501.github.io/css-cont-queries-talk/css-day/</a>
 </p-slide>
     <p-slide class="justify-start">
   <h2 class="our-header from-left">Before&hellip;</h2>
   <img src="img/ox-cart.jpg" alt="Vintage photo of an ox cart" class="full-media sepia full-media-y old-photo from-top">
+  <p-fragment>
+    <img src="img/js.png" alt="Logo of JavaScript" style="height: 5.5em;position: absolute;top: 1%;left: 40%;" class="from-above">
+    <img src="img/css3.png" alt="Logo of CSS" style="height: 6em;position: absolute;top: 41%;left: 52%;" class="sepia from-above">
+  </p-fragment>
   <p-notes>
     It was not 4 years ago that I was complaining about how things were moving slowly for CSS. Grids were the last new things
     and it took years to be refined and specified, and even if browsers were rather quick to implement it
@@ -146,23 +150,31 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
 <p-slide>
   <img src="img/cinema.webp" alt="Vintage photo of a theater" class="sepia old-photo full-media sepia full-media-y" style="right: 10%;">
   <p-fragment>
-    <h1 class="center from-top" style="margin-block: -1em 1.2em;">Only for viewports</h1>
+    <h1 class="center from-top" style="margin-block: -1em 1.2em; text-shadow: 0.01em 0.02em 0.02em #e8dbc3;">Only for viewports</h1>
     <img src="img/pointer.webp" alt="" role="presentation" class="sepia from-left" style="height: 6em;">
   </p-fragment>
 </p-slide>
 <p-slide>
-  <h2 class="center">What about <em>components</em>?</h2>
+  <h2 class="center">What about <em>components</em><i>?</i></h2>
   <img src="img/laurel-confused.webp" alt="Clip of a confused Stan Laurel" class="fade-borders" style="height: 8em; --fade-border-width: .25em">
 </p-slide>
 <p-slide>
   <img src="img/old-newspaper.png" alt="A picture of a fake old newspaper" class="full-media">
   <p-fragment>
-    <div class="frame" style="inset: 15.8% 31.5% 52.2% 46%; color: blue"></div>
-    <div class="frame" style="inset: 15.8% 53.7% 37.2% 38.8%; color: blue"></div>
+    <svg style="position: absolute;top: 10.8%;width: 30%;height: 41%;left: 43%;color: navy" viewBox="0 0 40 40" preserveAspectRatio="none">
+      <use href="img/marker-circle.svg#circle"></use>
+    </svg>
+    <svg style="position: absolute;top: 6.8%;width: 11%;height: 61%;left: 37%;color: navy" viewBox="0 0 40 40" preserveAspectRatio="none">
+      <use href="img/marker-circle.svg#circle"></use>
+    </svg>
   </p-fragment>
   <p-fragment>
-    <div class="frame" style="inset: 78.5% 31.3% 5.5% 53.7%; color: red"></div>
-    <div class="frame" style="inset: 63% 53.6% 5.4% 31.4%; color: red"></div>
+    <svg style="position: absolute;top: 58%;width: 20%;height: 42%;left: 29%;color: maroon" viewBox="0 0 40 40" preserveAspectRatio="none">
+      <use href="img/marker-circle.svg#circle"></use>
+    </svg>
+    <svg style="position: absolute;top: 75%;width: 20%;height: 23%;left: 51%;color: maroon" viewBox="0 0 40 40" preserveAspectRatio="none">
+      <use href="img/marker-circle.svg#circle"></use>
+    </svg>
   </p-fragment>
   <p-fragment class="two-columns center">
     <div style="padding-inline-end: 22%;">Different sizes&hellip;</div>
@@ -179,6 +191,10 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
     <img src="img/penny-farthing-2.png" alt="Picture of a man on a penny farthing" class="from-right" style="height: 6em;margin: -1em 0 0 5%;">
     <code class="from-right" style="position: absolute;top: 65%;left: 29%;text-indent: -1.3em;padding-left: 1.5em;width: 57%;">grid-template-columns: repeat(auto-fi*, minmax(10rem, 1fr))</code>
   </p-fragment>
+  <p-notes>
+    I don't know you, but I personally have to check the difference between auto-fill and auto-fit *every time*
+    I need to use one of them.
+  </p-notes>
 </p-slide>
 <p-slide>
   <div class="giko-slide">
@@ -299,7 +315,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
       <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
       <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
       Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
-      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+      Dolorum, repudiandae blanditiis quo architecto id totam?</p>
     </article>
     <article>
       <h4>Here&rsquo;s no contain</h4>
@@ -319,7 +335,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
       <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
       <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
       Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
-      Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.</p>
+      Dolorum, repudiandae blanditiis quo architecto id totam?</p>
     </article>
     <article style="contain: layout;">
       <h4>Lo, here&rsquo;s contain: layout</h4>
@@ -345,7 +361,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
       <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
       <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
         Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
-        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+        Dolorum, repudiandae blanditiis quo architecto id totam?
       </p>
       <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
         Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
@@ -355,13 +371,13 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   </div>
 </p-slide>
 <p-slide class="articles">
-  <div class="old-photo sepia" style="contain: size; margin-top: .55em; height: 4em;">
+  <div class="old-photo sepia" style="contain: size;margin-top: 0.9em;height: 3em;">
     <article>
       <h4>Hark, contain: size!</h4>
       <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat">
       <p>LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
         Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
-        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+        Dolorum, repudiandae blanditiis quo architecto id totam?
       </p>
       <p>SUNT est amet cum incidunt ab placeat repellendus, provident vel unde expedita numquam eius. Ipsum blanditiis officiis delectus soluta. Labore.
         Possimus nostrum amet sint sed aliquid tempore ratione quaerat incidunt saepe, placeat officia quas molestiae dolore non ut expedita vitae corrupti temporibus! Dolor voluptatem harum itaque impedit accusamus et aut?
@@ -395,7 +411,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
       <img src="img/top-hat-man.webp" alt="A distinguished man tipping his top hat" style="position: absolute;">
       <p style="margin-inline-start: 10em; margin-left: 10em;">LOREM ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, ipsam debitis omnis reiciendis, id nisi veritatis maiores distinctio quae voluptate esse aliquam eaque laboriosam unde, ad eos ratione asperiores dolores?
         Corporis accusantium, ipsa rerum temporibus voluptates ducimus deserunt accusamus ullam possimus assumenda sunt dolore voluptatibus quod et consequuntur consequatur quae magni? Fugiat, culpa velit. Fugiat dolor ad laudantium aliquam beatae?
-        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum. Consequatur nobis explicabo, iusto iure quia exercitationem commodi quisquam.
+        Dolorum, repudiandae blanditiis quo architecto id totam? Pariatur consequuntur inventore iusto facere perspiciatis, quas minus illum.
       </p>
     </article>
   </div>
@@ -416,13 +432,13 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   <ul class="self-center">
     <li>
       <p-fragment>
-        <img src="img/pointer.webp" role="presentation" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
+        <img src="img/pointer.webp" role="presentation" alt="" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
         <code>layout</code>
       </p-fragment>
     </li>
     <li>
       <p-fragment>
-        <img src="img/pointer.webp" role="presentation" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
+        <img src="img/pointer.webp" role="presentation" alt="" style="height: 1.5em; vertical-align: -1em;" class="sepia from-left">
         (<code>inline-</code>)<code>size</code>
       </p-fragment>
     </li>
@@ -444,16 +460,16 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   <div class="two-columns align-center">
     <pre class="language-css"><code>.container {
   container-type: inline-size;
-}
-.frame {
+}</code>
+<p-fragment><code>.frame {
   background: url(monalisa.jpg);
-}
+}</code></p-fragment>
 
-@container (width > 8rem) {
+<p-fragment><code>@container (width > 8rem) {
   .frame {
     background: url(spring.jpg);
   }
-}</code></pre>
+}</code></p-fragment></pre>
     <div>
       <pre class="language-html"><code>&lt;div class="container">
   &lt;div class="frame">&lt;/div>
@@ -500,7 +516,10 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
     font-size: clamp(2rem, (100vw - 768px) / 40, 3rem);
   }
 }</code></pre>
-  <p-fragment><img src="img/marker-circle.svg" alt="A marker circle around '100vw'" class="from-above" style="top: 41%; width: 8em; left: 37%;"></p-fragment>
+  <p-fragment>
+    <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'"
+      class="from-above" style="top: 54.6%;width: 8em;left: 37.3%;height: 4em;">
+  </p-fragment>
 </p-slide>
 <p-slide>
   <h2 class="center">We <em>still</em> can do it!</h2>
@@ -559,7 +578,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   <h1>But wait, there&rsquo;s more!</h1>
 </p-slide>
 <p-slide>
-  <h4 class="center">With Media Queries, we can query <em>not just sizes</em></h4>
+  <h4 class="center">With Media queries, we can query <em>not just sizes</em></h4>
   <p-fragment class="self-center from-bottom">
     <pre class="language-css"><code>@media (pointer: coarse) {
   ...
@@ -569,7 +588,7 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
 }</code></pre>
   </p-fragment>
   <p-fragment class="from-bottom">
-    <h3 class="center">What about Container Queries?</h3>
+    <h3 class="center">What about Container queries?</h3>
   </p-fragment>
 </p-slide>
 <p-slide>
@@ -612,8 +631,8 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
     <div style="width: auto; margin: 0">
       <pre class="language-css from-left"><code>@container style(--look: featured) { ... }</code></pre>
       <p-fragment>
-        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around '100vw'" class="from-above"
-          style="top: 0%; width: 35em; left: -10%; height: 10em;">
+        <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--look: featured)'" class="from-above"
+          style="top: 10%;width: 28em;left: 3%;height: 7em;">
         <h4 class="center">It&rsquo;s ok for <em>custom properties</em><i>!</i></h4>
       </p-fragment>
     </div>
@@ -624,12 +643,12 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   container-name: card;
   /* No need to declare container-type!
      Every element is a style container */
-}
-@container card style(--look: featured) {
+}</code><p-fragment><img src="img/brush-stroke-1.png" alt="Brush underline under 'no need'" style="position: absolute;width: 5em;top: 29%;left: 13%;filter: saturate(.8)"></p-fragment>
+<p-fragment><code>@container card style(--look: featured) {
   .card {
     background: salmon;
   }
-}</code></pre>
+}</code></p-fragment></pre>
 </p-slide>
 <p-slide>
   <h3 class="center">&hellip; don't we have <em>classes</em> for this?</h3>
@@ -708,11 +727,42 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
 @container style(--progress-value >= 90%) {
   .bar { background: green; }
 }</code></pre>
+<p-fragment>
+  <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--progress-value >= 50%)'" class="from-above"
+    style="top: 11%;width: 52em;left: -46%;height: 10em;">
+  <img src="img/marker-circle.svg#svgView(preserveAspectRatio(none))" alt="A marker circle around 'style(--progress-value >= 90%)'" class="from-above"
+    style="top: 32%;width: 52em;left: -46%;height: 10em;">
+</p-fragment>
 </p-slide>
 <p-slide>
   <div class="the-progress old-photo">
     <div class="bar"></div>
   </div>
+  <p-fragment class="landing" style="top: 10%; right: 15%">
+    <img src="img/js.png" alt="Logo of JavaScript" class="sepia" style="height: 4em; transform: rotate(15deg); filter: drop-shadow(.05em .05em .1em rgba(0, 0, 0, .35))">
+    <div class="big-x" style="width: 100%; z-index: 1; transform: scale(1.5) rotate(15deg) translate(-15%, -80%);"></div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h4 class="center">In the end&hellip;</h4>
+  <p-fragment>
+    <h1 class="center">Can I use them?</h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">&ldquo;Let&rsquo;s ship it!&rdquo;</h2>
+  <img src="img/ship.png" alt="Illustration of a sail ship at sea" style="height: 10em;" class="sepia">
+  <p-notes>
+    <p>
+      It's clear that CQ, with their ability to set styles based on the containers, are going to be the
+      Next Big Thing in layouts and styles. It's going to be even clearer when the style queries specification
+      will be fully defined and implemented in all browsers.
+    </p>
+    <p>
+      Every widget that we used to design only as full-width components can now be rethought as adaptable
+      functionalities that can fit every spot of our website.
+    </p>
+  </p-notes>
 </p-slide>
     <p-slide>
   <h4 class="our-header">Links</h4>
@@ -738,14 +788,15 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   </ul>
 </p-slide>
     <p-slide>
-  <h1 class="center">That's all, folks!<br />👋</h1>
+  <h1 class="center">That's all, folks!</h1>
+  <img src="img/hand.png" alt="Waving hand" class="waving-hand">
 </p-slide>
 <p-slide>
   <h3 class="center final-link">
     <a href="https://maxart2501.github.io/css-security-talk/css-day/">
       maxart2501.github.io/css-security-talk/css-day/
     </a>
-    <img src="img/qr-slides.svg" alt="QR Code for the presentation's link">
+    <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" class="old-photo sepia">
   </h3>
 </p-slide>
 <p-slide>
