@@ -9,6 +9,17 @@
   <pre class="language-css big self-center"><code>.container {
   container-type: inline-size;
 }</code></pre>
+  <p-notes>
+    <p>
+      We're going to use the new property `container-type`, and not `contain` that we've just seen. In the first drafts of
+      the spec, `contain` was used, but that was changed afterwards as the two specs specialized in performance (containment)
+      and in capabilities (container queries).
+    </p>
+    <p>
+      Nonetheless, defining `container-type` automatically turns on containment for `layout` and `size` or `inline-size`,
+      depending on the value of `container-type`.
+    </p>
+  </p-notes>
 </p-slide>
 <p-slide>
   <div class="two-columns align-center">
