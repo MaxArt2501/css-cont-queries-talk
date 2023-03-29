@@ -137,6 +137,47 @@
   </div>
 </p-slide>
 <p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--theme: dark) {
+  p { ... }
+}
+@container style(--theme: rainbows) {
+  header { ... }
+}</code></pre>
+  <p-notes>
+    Because one thing is the theme set as preferred, another is the theme set by the user.
+    This is especially useful for encapsulated styles.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--content: minimal) {
+  .abstract { display: none; }
+}
+@container style(--content: verbose) {
+  .details { display: block; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--spacing: loose) {
+  main { padding: 2rem; }
+}
+@container style(--spacing: compact) {
+  main { padding: 0.5rem; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--orientation: vertical) {
+  section { flex-direction: column; }
+}
+@container style(--orientation: auto)
+  and (width &lt; 10rem)
+  { ... }</code></pre>
+  <p-notes>You can combine size queries and style queries, no problem!</p-notes>
+</p-slide>
+<p-slide>
   <h2 class="center">But even <a href="https://github.com/w3c/csswg-drafts/issues/8376" target="_blank" rel="noopener">more</a>
     has to come&hellip;</h2>
 </p-slide>
