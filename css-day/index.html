@@ -32,7 +32,7 @@
 <p-slide class="justify-start">
   <img src="img/logo-antreem-border.svg" alt="Antreem logo" class="antreem-logo">
   <div class="my-data">
-    <img src="img/maxart.jpg" alt="My face" class="my-face">
+    <img src="img/maxart.jpg" alt="My face" class="my-face sepia">
     <h2>Massimo Artizzu</h2>
     <p>
       Web Dev Manager<br>
@@ -298,6 +298,13 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
       <li><p-fragment><code>style</code></p-fragment></li>
     </ul>
   </div>
+  <p-notes>
+    <p>Element containment is introduced by the property `contain`, which can 4 different values or a combination of those.</p>
+    <p>
+      These values state to the CSS engine that one or more aspects of the process of element rendering are <em>contained</em>
+      inside the element, in the manners we're now going to explore.
+    </p>
+  </p-notes>
 </p-slide>
 <p-slide>
   <h2 class="our-header">Layout containment</h2>
@@ -455,6 +462,17 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   <pre class="language-css big self-center"><code>.container {
   container-type: inline-size;
 }</code></pre>
+  <p-notes>
+    <p>
+      We're going to use the new property `container-type`, and not `contain` that we've just seen. In the first drafts of
+      the spec, `contain` was used, but that was changed afterwards as the two specs specialized in performance (containment)
+      and in capabilities (container queries).
+    </p>
+    <p>
+      Nonetheless, defining `container-type` automatically turns on containment for `layout` and `size` or `inline-size`,
+      depending on the value of `container-type`.
+    </p>
+  </p-notes>
 </p-slide>
 <p-slide>
   <div class="two-columns align-center">
@@ -713,6 +731,47 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   </div>
 </p-slide>
 <p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--theme: dark) {
+  p { ... }
+}
+@container style(--theme: rainbows) {
+  header { ... }
+}</code></pre>
+  <p-notes>
+    Because one thing is the theme set as preferred, another is the theme set by the user.
+    This is especially useful for encapsulated styles.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--content: minimal) {
+  .abstract { display: none; }
+}
+@container style(--content: verbose) {
+  .details { display: block; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--spacing: loose) {
+  main { padding: 2rem; }
+}
+@container style(--spacing: compact) {
+  main { padding: 0.5rem; }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Notable ideas</h3>
+  <pre class="self-center big language-css"><code>@container style(--orientation: vertical) {
+  section { flex-direction: column; }
+}
+@container style(--orientation: auto)
+  and (width &lt; 10rem)
+  { ... }</code></pre>
+  <p-notes>You can combine size queries and style queries, no problem!</p-notes>
+</p-slide>
+<p-slide>
   <h2 class="center">But even <a href="https://github.com/w3c/csswg-drafts/issues/8376" target="_blank" rel="noopener">more</a>
     has to come&hellip;</h2>
 </p-slide>
@@ -768,7 +827,13 @@ h1:has(+ p) { margin-bottom: .5em; }</code></pre>
   <h4 class="our-header">Links</h4>
   <ul class="links">
     <li>
-      🔗 CSS container queries are finally here
+      🔗 CSS Container Queries - MDN
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries">
+        developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
+      </a>
+    </li>
+    <li>
+      🔗 CSS container queries are finally here - Ahmad Shadeed
       <a href="https://ishadeed.com/article/container-queries-are-finally-here/">
         ishadeed.com/article/container-queries-are-finally-here/
       </a>
