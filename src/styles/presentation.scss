@@ -635,7 +635,7 @@ pre[class*='language-'] {
   transform-origin: 51% 94%;
 
   p-slide[aria-hidden='false'] & {
-    animation: waving var(--fragment-duration, 300ms) 3 forwards;
+    animation: waving var(--fragment-duration, 300ms) var(--fragment-duration, 300ms) 3 forwards;
   }
 }
 
@@ -644,4 +644,16 @@ pre[class*='language-'] {
   25% { transform: rotate(0deg); }
   75% { transform: rotate(-30deg); }
   100% { transform: rotate(-15deg); }
+}
+
+.thats-all {
+  clip-path: inset(0 0% 0 0%);
+
+  p-slide[aria-hidden='false'] & {
+    animation: thats-all calc(var(--fragment-duration, 300ms) * 3) 1 linear forwards;
+  }
+}
+@keyframes thats-all {
+  from { clip-path: inset(0 100% 0 0%); }
+  to { clip-path: inset(0 0% 0 0%); }
 }
